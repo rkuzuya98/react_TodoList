@@ -1,0 +1,321 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: linear-gradient(90deg, #76D6FF 0%, #7A81FF 100%);
+  color: white;
+  font-family: "Poppins", sans-serif;
+  height: 100vh;
+}
+
+header {
+  font-size: 1.5rem;
+  margin: 5vw 0 5vw 0;
+}
+
+form {
+  margin: 5vw 0 3vw 0;
+}
+
+header,
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form input,
+form button {
+  padding: 0.5rem;
+  font-size:1.2rem;
+  border-top: 3px solid #7A81FF;
+  border-bottom: 3px solid #7A81FF;
+  background: white;
+}
+
+form input {
+  border-left: 3px solid #7A81FF;
+  border-radius: 30px 0 0 30px;
+  height: 50px;
+  width: 400px;
+  border-right: none; 
+  text-align: center;
+  padding-left: 50px;
+}
+
+form button {
+  border-right: 3px solid #7A81FF;
+  border-radius: 0 30px 30px 0;
+  width: 50px;
+  height: 50px;
+  font-size: 1.5rem;
+  border-left: none;
+  text-align: center;
+  color: #7A81FF;
+  background: #f7fffe;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+form input:focus {
+  outline: 0;
+  border: 3px solid #863AFF;
+  border-right: none;
+}
+form input:focus + button {
+  outline: 0;
+  color: #863AFF;
+  border-left: none; 
+  border: 3px solid #863AFF;
+  border-left: none;
+}
+
+form button:hover {
+  background: #863AFF;
+  color: white;
+}
+
+/* ここからがTodoListコンポーネントに関するCSS */
+
+.todo-list {
+  text-align: center;
+  width: 350px;
+  margin: 0 auto;
+}
+
+.todo-list li {
+  padding: 10px;
+  margin: 6px;
+  background-color: white;
+  list-style: none;
+  color: #72629e;
+  border-radius: 5px;
+  position: relative;
+  font-weight: bold;
+}
+
+.todo-list li:before {
+  content: '';
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display:  inline-block; 
+  background-color: #76BBFF;
+  color: black;
+  vertical-align: middle;
+  position: absolute;
+  left: 10px;
+  top: 12.5px;
+}
+
+.check {
+  color: rgba(0, 0, 0, 0.2);
+  position: absolute;
+  right: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.todo-list li .check:hover {
+  transform: scale(2);
+  color: rgb(138, 95, 255);
+}
+
+.todo-list .done {
+  text-decoration: line-through;
+  color: rgba(114, 98, 158, 0.5);
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+
+.todo-list .done .check {
+  color: rgb(138, 95, 255);
+  cursor: pointer;
+}
+
+
+
+.todo-list .done .check:hover {
+  color: rgba(114, 98, 158, 0.5);
+}
+
+.remove {
+  position: absolute;
+  opacity: 0;
+}
+
+.done .remove {
+  color: rgb(138, 95, 255);
+  transform: scale(1.3);
+  opacity: 1;
+  font-weight: bold;
+  position: absolute;
+  top: 8px;
+  right: 50px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.done .remove:hover {
+  transform: scale(2.5);
+}
+
+
+
+
+/* ここまでがTodoListコンポーネントに関するCSS */
+
+
+
+/* ここからがFilterコンポーネントに関するCSS */
+
+.filter {
+  margin: 3vw auto; 
+  display: flex;
+  list-style: none;
+  justify-content: center;
+}
+
+.filter li {
+  height: 45px;
+  width: 110px;
+  padding: 0 10px;
+  text-align: center;
+  font-size: 1.3em;
+  cursor: pointer;
+  vertical-align: middle;
+  transition: all 0.3s ease;
+}
+
+.filter li:hover {
+  font-weight: bold;
+  border-bottom: 3px solid rgba(0, 0, 0, 0.1);
+}
+
+.selected-filter {
+  font-weight: bold;
+  border-bottom: 3px solid white;
+}
+
+/* ここまでがFilterコンポーネントに関するCSS */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .todo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+/* .todo-list {
+  min-width: 30%;
+  list-style: none;
+} */
+
+/* .todo {
+  margin: 0.5rem;
+  background: white;
+  font-size: 1.5rem;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 1s ease;
+} */
+/* .filter-todo {
+  padding: 1rem;
+}
+.todo li {
+  flex: 1;
+} */
+
+/* .trash-btn,
+.complete-btn {
+  background: #ff6f47;
+  color: white;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.complete-btn {
+  background: rgb(11, 212, 162);
+}
+.todo-item {
+  padding: 0rem 0.5rem;
+} */
+
+/* .fa-trash,
+.fa-check {
+  pointer-events: none;
+}
+
+.fall {
+  transform: translateY(10rem) rotateZ(20deg);
+  opacity: 0;
+}
+
+.completed {
+  text-decoration: line-through;
+  opacity: 0.5;
+} */
+
+/*CUSTOM SELECTOR */
+/* select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: 0 !important;
+  background-image: none;
+} */
+
+/* Custom Select */
+/* .select {
+  margin: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+select {
+  color: #ff6f47;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  width: 12rem;
+} */
+/* Arrow */
+/* .select::after {
+  content: "\25BC";
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1rem;
+  background: #ff6f47;
+  cursor: pointer;
+  pointer-events: none;
+} */
+/* Transition */
+/*
+.select:hover::after {
+  transform: scale(1.5);
+}
+*/
